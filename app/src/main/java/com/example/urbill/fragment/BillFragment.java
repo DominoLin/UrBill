@@ -1,4 +1,4 @@
-package com.example.urbill;
+package com.example.urbill.fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,6 +13,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.example.urbill.BillBean;
+import com.example.urbill.BillManager;
+import com.example.urbill.DateUtil;
+import com.example.urbill.R;
+import com.example.urbill.adapter.ListViewAdapter;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.urbill;
+package com.example.urbill.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.urbill.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.robinhood.ticker.TickerUtils;
 import com.robinhood.ticker.TickerView;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     private TickerView amountText;//数字显示
     private TextView dateText;//星期显示
-    private FloatingActionButton addBtn//添加账单按钮
+    private FloatingActionButton addBtn;//添加账单按钮
     private ViewPager viewPager;//账单ViewPager
 
     private int currentPagerPosition = 0;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this. AddBillActivity.class);
+                Intent intent = new Intent(MainActivity.this, AddBillActivity.class);
                 startActivityForResult(intent,1);
             }
         });

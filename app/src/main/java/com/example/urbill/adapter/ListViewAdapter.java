@@ -1,4 +1,4 @@
-package com.example.urbill;
+package com.example.urbill.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -6,10 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.urbill.BillBean;
+import com.example.urbill.DateUtil;
+import com.example.urbill.R;
 
 import java.util.List;
 
-class ListViewAdapter extends BaseAdapter {
+public class ListViewAdapter extends BaseAdapter {
     private static final String TAG = "ListViewAdapter";
     private List<BillBean> bills = null;
     private LayoutInflater inflater;
@@ -75,5 +81,19 @@ class ListViewAdapter extends BaseAdapter {
         }
         holder.timeTv.setText(DateUtil.getFormattedTime(bill.getTimeStamp()));
 //        holder.categoryIcon.setImageResource();
+    }
+
+    class ViewHolder {
+        TextView remarkTv;
+        TextView amountTv;
+        TextView timeTv;
+        ImageView categoryIcon;
+
+        public ViewHolder(View itemView, BillBean bill){
+            remarkTv = itemView.findViewById(R.id.textView_remark);
+            amountTv = itemView.findViewById(R.id.textView_amount);
+            timeTv = itemView.findViewById(R.id.textView_time);
+            categoryIcon = itemView.findViewById(R.id.imageView_category);
+        }
     }
 }
